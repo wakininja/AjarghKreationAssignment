@@ -1,11 +1,15 @@
-import React from 'react'
 
-function footer() {
+export default function footer() {
   return (
-    <div className=''>
-      footer
-    </div>
+    <footer className="bg-gray-50">
+      <div className="container mx-auto flex justify-center py-12">
+        <div className="py-5">
+          <div className="flex gap-6 justify-center">
+          Copyright &#169;2023 All rights reserved | wakilthakur.com
+          </div>
+        </div>
+
+      </div>
+    </footer>
   )
 }
-
-export default footer
