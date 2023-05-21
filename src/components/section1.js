@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Author from "./_child/author";
 
 export default function section1() {
   return (
@@ -35,9 +36,9 @@ export default function section1() {
         <p className="text-gray-500 py-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consequuntur quaerat deserunt excepturi, obcaecati alias nisi asperiores iusto est similique vel dolorum itaque minus quod veritatis quo aut? Dolorum, nesciunt.
         </p>
-        <h1>author</h1>
+        
+       <Author/>
        </div>
-      
     </div>
   )
 }
