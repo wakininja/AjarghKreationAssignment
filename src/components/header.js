@@ -1,5 +1,5 @@
 import { ImLinkedin, ImGithub } from "react-icons/im"; 
-// import Link from 'next/link';
+import Link from 'next/link';
 
 function header() {
   return (
@@ -15,8 +15,6 @@ function header() {
 
         {/* This is for  Design Order */}
             <div className='shrink w-80 sm:order-2'>
-                {/* <Link>
-                </Link> */}
                 <a className="font-bold uppercase text-3xl">Design</a>
             </div>
 

@@ -1,12 +1,9 @@
-import Header from '../components/header'
-
+import Format from '../layouts/format';
+import Section1 from '../components/section1';
 export default function Home() {
   return (
-    <div>
-      <Header/>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    </div>
+    <Format>
+      <Section1/>
+    </Format>
      );
 }
