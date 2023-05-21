@@ -25,8 +25,9 @@ export default function page() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iusto magni cumque inventore culpa. Nam neque dignissimos velit. Minima explicabo ab nam nesciunt ea culpa accusamus blanditiis ad nemo obcaecati veniam hic maxime, dolore sed.</p>
             </div>
         </div>
-        </section>
 
+        </section>
+        
     </Format>
   )
 }

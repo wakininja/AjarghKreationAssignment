@@ -1,12 +1,15 @@
-import Format from '../layouts/format';
+import Header from '../components/header';
 import Section1 from '../components/section1';
 import Section2 from '../components/section2';
+import Footer from '../components/footer';
 
 export default function Home() {
   return (
-    <Format>
+      <div>
+      <Header/>
       <Section1/>
       <Section2/>
-    </Format>
+      <Footer/>
+      </div>
      );
 }

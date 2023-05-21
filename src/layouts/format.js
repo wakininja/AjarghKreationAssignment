@@ -1,5 +1,5 @@
 import Header from '../components/header'
-import Footer from '../components/footer';
+import Comment from '../components/comment';
 import Head from 'next/head';
 
 export default function format({children}) {
@@ -10,7 +10,7 @@ export default function format({children}) {
         </Head>
       <Header/>
       <main>{children}</main>
-      <Footer/>
+      <Comment/>
     </div>
   )
 }
