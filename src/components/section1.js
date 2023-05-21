@@ -3,10 +3,14 @@ import Link from "next/link";
 import Author from "./_child/author";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {Autoplay} from 'swiper';
+
 // Import Swiper styles
 import "swiper/css";
 
 export default function section1() {
+
+    SwiperCore.use([Autoplay])
     const bg={
         background:"url('/images/banner/ban1.jpg')no-repeat",
         backgroundPosition:"right"
@@ -20,6 +24,11 @@ export default function section1() {
         <Swiper
           
           slidesPerView={1}
+        //   loop ={true}
+        //   autoplay={{
+        //     delay:2000
+        //   }
+        //   }
 
         >
           <SwiperSlide>{Slide()}</SwiperSlide>
