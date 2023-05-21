@@ -1,4 +1,5 @@
-import React from 'react'
+import { ImLinkedin, ImGithub } from "react-icons/im"; 
+// import Link from 'next/link';
 
 function header() {
   return (
@@ -14,16 +15,18 @@ function header() {
 
         {/* This is for  Design Order */}
             <div className='shrink w-80 sm:order-2'>
-                <a>Design</a>
+                {/* <Link>
+                </Link> */}
+                <a className="font-bold uppercase text-3xl">Design</a>
             </div>
 
         {/* This is  for flex order */}
             <div className='w-96 order-3 flex justify-center'>
                 <div className="flex gap-6">
                     {/* social icon */}
-                    <a>faceebook</a>
-                    <a>faceebook</a>
-                    <a>faceebook</a>
+                    <a><ImLinkedin color="#888888"/></a>
+                    <a><ImGithub color="#888888"/></a>
+                  
                     
                 </div>
             </div>
