@@ -34,8 +34,6 @@ This Blog post is the made up of using  The following Technologies:
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
-
 - [Next js] - Created Blog-App project using This
 - [VS code Editor] - awesome  text editor for writing code
 - [Swiper] - we use swiper slider for sliding posts.
