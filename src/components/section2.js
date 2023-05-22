@@ -1,8 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import Author from "./_child/author";
+import fetcher from '../lib/fetcher';
+import Spinner from "./_child/spinner";
+import Error from "./_child/error";
 
 export default function section2() {
+  const { data, isLoading, isError} = fetcher('api/postsid')
+ 
+  if(isLoading) return <Spinner></Spinner>;
+    if(isError) return <Error></Error>
+
   return (
     <section className="container mx-auto md:px-20 py-10">
       <h1 className="font-bold text-4xl py-12 text-center">Latest post</h1>
@@ -10,27 +18,26 @@ export default function section2() {
       {/* Grid column */}
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
-        {/* This will show my all list of blogs */}
-        {Post()}
-        {Post()}
-        {Post()}
-        {Post()}
-        {Post()}
-        {Post()}
-      </div>
+            {
+                data.map((value, index) => (
+                    <Post data={value} key={index}></Post>
+                ))
+            }
+        </div>
     </section>
   );
 }
 
-function Post() {
+function Post({data}) {
+  const {id,category,title,img,summary,author} = data;
   return (
     <div className="item">
       <div className="image">
         <Link href={"/"}>
           <Image
-            src={"/images/img1.png"}
+            src={img ||"/"}
             className="rounded"
-            width={500}
+       width={500}
             height={350}
           />
         </Link>
@@ -38,7 +45,7 @@ function Post() {
       <div className="info flex justify-center flex-col py-4">
         <div className="category">
           <Link className="text-orange-600 hover:text-orange-800" href={"/"}>
-            Ecommerce
+            {category || "unknown"}
           </Link>
           <Link className="text-gray-800 hover:text-gray-600" href={"/"}>
             {" "}
@@ -50,7 +57,7 @@ function Post() {
             className="text-xl font-bold text-gray-800 hover:text-gray-600"
             href={"/"}
           >
-            {" "}
+            {title||"Title"}
             Lorem Lorem ipsum dolor sit amet .{" "}
           </Link>
         </div>
@@ -60,7 +67,7 @@ function Post() {
           asperiores iusto est similique vel dolorum itaque minus quod veritatis
           quo aut? Dolorum, nesciunt.
         </p>
-        <Author />
+        {author?<Author></Author>:<></>}
       </div>
     </div>
   );
