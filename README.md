@@ -4,7 +4,8 @@
 
 ## NOTE:- This Page is under construction only few features are ready because 22/05/2023 is deadline i am submitting This and loving to Working On it right now.
 
-## gif
+![2023-05-22 08-23-13_Trim](https://github.com/wakininja/AjarghKreationAssignment/assets/86143301/74bd6d1e-eab2-4b57-b3a6-8076e6e6f16b)
+
 
 
 This Blog post is the made up of using  The following Technologies:
