@@ -4,11 +4,18 @@ import Author from "./_child/author";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {Autoplay} from 'swiper';
+import fetcher from '../lib/fetcher';
+import Spinner from "./_child/spinner";
+import Error from "./_child/error";
 
 // Import Swiper styles
 import "swiper/css";
 
 export default function section1() {
+  const { data, isLoading, isError } = fetcher('api/trending')
+    
+    if(isLoading) return <Spinner></Spinner>;
+    if(isError) return <Error></Error>
 
     SwiperCore.use([Autoplay])
     const bg={
@@ -24,19 +31,19 @@ export default function section1() {
         <Swiper
           
           slidesPerView={1}
-        //   loop ={true}
-        //   autoplay={{
-        //     delay:2000
-        //   }
-        //   }
+          loop ={true}
+          autoplay={{
+            delay:2000
+          }
+          }
 
         >
-          <SwiperSlide>{Slide()}</SwiperSlide>
-          <SwiperSlide>{Slide()}</SwiperSlide>
-          <SwiperSlide>{Slide()}</SwiperSlide>
-          <SwiperSlide>{Slide()}</SwiperSlide>
-          <SwiperSlide>{Slide()}</SwiperSlide>
-          <SwiperSlide>{Slide()}</SwiperSlide>
+          {/* This is for fetching data */}
+           {
+                    data.map((value, index) => (
+                        <SwiperSlide key={index}><Slide data={value}></Slide></SwiperSlide>
+                    ))
+                }
           
           ...
         </Swiper>
@@ -50,6 +57,7 @@ export default function section1() {
 //  because we are going to itrate over array just making function for this
 
 function Slide() {
+  
   return (
     <div className="grid md:grid-cols-2">
       <div className="image">

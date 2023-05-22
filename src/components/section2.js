@@ -57,15 +57,12 @@ function Post({data}) {
             className="text-xl font-bold text-gray-800 hover:text-gray-600"
             href={"/"}
           >
-            {title||"Title"}
+            {title||"Unknown"}
             Lorem Lorem ipsum dolor sit amet .{" "}
           </Link>
         </div>
         <p className="text-gray-500 py-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-          consequuntur quaerat deserunt excepturi, obcaecati alias nisi
-          asperiores iusto est similique vel dolorum itaque minus quod veritatis
-          quo aut? Dolorum, nesciunt.
+          {summary||"Unknown"}
         </p>
         {author?<Author></Author>:<></>}
       </div>
